@@ -17,7 +17,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
     <!-- open graph metadata -->
-    <meta property="og:title" content="Miniblox" />
+    <meta property="og:title" content="Wabablox" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://miniblox.io" />
     <meta property="og:image" content="/images/titlescreen/default.png" />
@@ -93,34 +93,6 @@
   <body>
     <div style="position: absolute; right: 0" id="preroll"></div>
 
-    <!-- Load video ad player -->
-    <script>
-      // video-ad-skipped
-      window.aiptag.cmd.player.push(function () {
-        window.aiptag.adplayer = new aipPlayer({
-          AD_WIDTH: 240, // default: 960
-          AD_HEIGHT: 135, // default: 540
-          AD_FULLSCREEN: false,
-          AD_CENTERPLAYER: false,
-          LOADING_TEXT: "loading advertisement",
-          PREROLL_ELEM: function () {
-            return document.getElementById("preroll");
-          },
-          AIP_COMPLETE: function (evt) {
-            /*******************
-           ***** WARNING *****
-           *******************
-           Please do not remove the PREROLL_ELEM
-           from the page, it will be hidden automaticly.
-           If you do want to remove it use the AIP_REMOVE callback.
-          */
-            console.error("Preroll Ad Completed: " + evt);
-          },
-          AIP_REMOVE: function () {},
-        });
-      });
-    </script>
-
     <!-- Google Adsense -->
     <script
       async
@@ -132,11 +104,11 @@
       <div class="background-image" style="image-rendering: pixelated"></div>
 
       <div id="loading-screen-container">
-        <div id="loading-screen-text">Miniblox</div>
+        <div id="loading-screen-text">Wabablox</div>
         <div id="progress-bar">
           <div id="progress-bar-inner"></div>
         </div>
-        <div id="progress-text">Initializing game...</div>
+        <div id="progress-text">Loading game...</div>
       </div>
     </div>
 
