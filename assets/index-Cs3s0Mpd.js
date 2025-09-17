@@ -241380,7 +241380,7 @@ const GuiChatInput = observer(() => {
                     pl: 0,
                     placeholder:
                       !g.showInput && !S
-                        ? "Press enter on your keyboard to chat or press / for commands"
+                        ? "Press enter to chat"
                         : "",
                     bg: "black",
                     autoComplete: "false",
