@@ -241335,7 +241335,7 @@ const GuiChatInput = observer(() => {
                   p: 2,
                   maxH: "20vh",
                   overflow: "scroll",
-                  border: "1.5px solid black",
+                  border: "1.5px solid pink",
                   borderBottom: "none",
                   ...AcrylicBackgroundChakraProps,
                   children: jsxRuntimeExports.jsxs(Text, {
@@ -241367,7 +241367,7 @@ const GuiChatInput = observer(() => {
                   (!S || g.showInput) &&
                     jsxRuntimeExports.jsx(Text, {
                       as: "span",
-                      children: g.isInputCommandMode ? "/" : ">",
+                      children: g.isInputCommandMode ? "Commands:/" : "Chat:",
                     }),
                   jsxRuntimeExports.jsx(Input$1, {
                     ref: m,
@@ -241382,7 +241382,7 @@ const GuiChatInput = observer(() => {
                       !g.showInput && !S
                         ? "Press enter on your keyboard to chat or press / for commands"
                         : "",
-                    bg: "transparent",
+                    bg: "black",
                     autoComplete: "false",
                     style: { touchAction: "none" },
                     fontSize: b,
