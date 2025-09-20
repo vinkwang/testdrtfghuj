@@ -213832,6 +213832,36 @@ const Sp = class Sp {
     I(this, "sky");
     I(this, "fog");
     I(this, "clouds", new Clouds(this));
+    // force-enable clouds on startup (override option at runtime)
+    try {
+      if (typeof Options$1 !== "undefined" && Options$1 && Options$1.clouds) {
+        Options$1.clouds.value = true;
+      }
+      this.clouds.showClouds = true;
+      try {
+        this.clouds.generateClouds("add");
+      } catch (e) {
+        console.error("Clouds.generateClouds force-enable failed:", e);
+      }
+    } catch (e) {
+      console.error("Failed to force-enable clouds:", e);
+    }
+    // wire Clouds instance to Options$1.clouds (initialize and react to changes)
+    if (typeof Options$1 !== "undefined" && Options$1 && Options$1.clouds) {
+      try {
+        this.clouds.showClouds = Options$1.clouds.value;
+        Options$1.clouds.onChange((v) => {
+          this.clouds.showClouds = v;
+          try {
+            this.clouds.generateClouds(v ? "add" : "remove");
+          } catch (e) {
+            console.error("Clouds.generateClouds failed:", e);
+          }
+        });
+      } catch (err) {
+        console.error("Failed to wire clouds option:", err);
+      }
+    }
     I(this, "tileEntityRenderer");
     I(this, "effectRenderer", new EffectRenderer(this.entityMeshes));
     ((this.game = u),
@@ -218006,12 +218036,12 @@ const DayGridItem = (m) => {
           ? toast({
               title: `You unboxed a duplicate ${b} ${S.type}. Awarded ${COINS_ON_DUPLICATE} coins instead.`,
               status: "warning",
-              position: "top-right",
+              position: "top-middle",
             })
           : toast({
               title: `You unboxed the ${b} ${S.type}!`,
               status: "success",
-              position: "top-right",
+              position: "top-middle",
             });
       }
       const S = g.item;
