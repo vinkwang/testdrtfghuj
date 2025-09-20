@@ -213576,7 +213576,7 @@ class Clouds {
     this.gameScene = u;
   }
   generateClouds(u) {
-    for (const h of this.clouds) this.gameScene.scene.remove(h);
+    for (const h of this.clouds) this.gameScene.scene.add(h);
     if (((this.clouds = []), u == "add")) {
       this.clouds = [];
       for (let h = 0; h < 100; h++) {
@@ -213843,6 +213843,14 @@ const Sp = class Sp {
       } catch (e) {
         console.error("Clouds.generateClouds force-enable failed:", e);
       }
+      // debug: report created cloud count and first positions
+      try {
+        console.log('Clouds: forced generation complete, count =', this.clouds.length);
+        if (this.clouds.length > 0) {
+          const sample = this.clouds.slice(0, 3).map(function (m) { return m.position ? {x: m.position.x, y: m.position.y, z: m.position.z} : null; });
+          console.log('Clouds sample positions:', sample);
+        }
+      } catch (logErr) { console.error('Clouds logging failed:', logErr); }
     } catch (e) {
       console.error("Failed to force-enable clouds:", e);
     }
