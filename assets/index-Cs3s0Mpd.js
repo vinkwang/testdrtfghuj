@@ -164551,7 +164551,7 @@ const frames = JSON.parse(
   PIXEL_RATIO = TILE_SIZE / BLOCK_PIXELS,
   MATERIAL_TYPE_MAP = {
     Basic: MeshBasicMaterial,
-    Lambert: MeshStandardMaterial,
+    Lambert: MeshLambertMaterial,
     Phong: MeshPhongMaterial,
     Standard: MeshStandardMaterial,
     Toon: MeshToonMaterial,
@@ -167813,14 +167813,11 @@ class SkinManager {
     const k = new CanvasTexture(v);
     ((k.minFilter = NearestFilter), (k.magFilter = NearestFilter));
     const E = !u.isArmor;
-    // use MeshStandardMaterial for more realistic PBR lighting
-    return new MeshStandardMaterial({
+    return new MeshLambertMaterial({
       map: k,
       side: FrontSide,
       transparent: E,
       depthWrite: !0,
-      roughness: 0.8,
-      metalness: 0.0,
     });
   }
   fixedUpdate() {
@@ -168795,14 +168792,11 @@ class ModelSign extends Model {
   initTextMesh(h) {
     const p = new CanvasTexture(this.canvas);
     ((p.minFilter = NearestFilter), (p.magFilter = NearestFilter));
-    const g = new MeshStandardMaterial({
+    const g = new MeshLambertMaterial({
         map: p,
         side: FrontSide,
         transparent: !0,
         alphaTest: 0.5,
-        roughness: 0.9,
-        metalness: 0.0,
-        envMap: textureManager?.envMap || null,
       }),
       y = new PlaneGeometry(1, 0.5);
     ((this.textMesh = new Mesh(y, g)),
@@ -187872,7 +187866,6 @@ renderer.outputColorSpace = LinearSRGBColorSpace;
 const camera = new OrthographicCamera(-0.85, 0.85, 0.85, -0.85);
 camera.lookAt(-1, -0.7, -1);
 const scene = new Scene();
-setupLighting(scene);
 scene.add(camera);
 scene.add(new AmbientLight("#FFFFFF", 1.5));
 const dir = new DirectionalLight("white", 1.5);
