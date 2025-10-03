@@ -218630,7 +218630,7 @@ const Input = ({
                 y)
               ) {
                 case 2:
-                  (u(), m("/accounts/referrals"));
+                  (u(), m("/accounts/referrals/check"));
                   break;
                 case 0:
                   g.connect(LOCALHOST_ADDRESS, !0);
