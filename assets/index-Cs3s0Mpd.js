@@ -218577,10 +218577,10 @@ const Input = ({
   InfoPopup = ({ setShowUpdatePopup: m }) =>
     jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {}),
   BUTTON_ACTION_TO_STRING = {
-    2: "Join localhost",
-    5: "Direct Connect",
-    4: "Play",
-    0: "Reconnect",
+    0: "Join localhost",
+    1: "Direct Connect",
+    2: "Play",
+    3: "Reconnect",
   },
   QuickLaunchButton = observer(() => {
     const m = useNavigate(),
@@ -218629,10 +218629,10 @@ const Input = ({
                   Game.enterFullscreen(),
                 y)
               ) {
-                case 2:
+                case 0:
                   (u(), m("/quicklaunch"));
                   break;
-                case 0:
+                case 2:
                   g.connect(LOCALHOST_ADDRESS, !0);
                   break;
                 case 1:
