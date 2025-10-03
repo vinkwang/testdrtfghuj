@@ -218629,13 +218629,13 @@ const Input = ({
                   Game.enterFullscreen(),
                 y)
               ) {
-                case 1:
-                  (u(), m("/quicklaunch"));
+                case 2:
+                  (u(), m("/accounts/referrals"));
                   break;
                 case 0:
                   g.connect(LOCALHOST_ADDRESS, !0);
                   break;
-                case 2:
+                case 1:
                   m("/direct_connect");
                   break;
                 case 3:
