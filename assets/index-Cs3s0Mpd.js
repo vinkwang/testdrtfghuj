@@ -218577,10 +218577,10 @@ const Input = ({
   InfoPopup = ({ setShowUpdatePopup: m }) =>
     jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {}),
   BUTTON_ACTION_TO_STRING = {
-    0: "Join localhost",
-    1: "Direct Connect",
-    2: "Play",
-    3: "Reconnect",
+    2: "Join localhost",
+    5: "Direct Connect",
+    4: "Play",
+    0: "Reconnect",
   },
   QuickLaunchButton = observer(() => {
     const m = useNavigate(),
