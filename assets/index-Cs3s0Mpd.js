@@ -218630,7 +218630,7 @@ const Input = ({
                 y)
               ) {
                 case 2:
-                  (u(), m("/accounts/referrals/check"));
+                  (u(), m("/quicklaunch"));
                   break;
                 case 0:
                   g.connect(LOCALHOST_ADDRESS, !0);
@@ -218873,7 +218873,7 @@ const Input = ({
     });
   },
   TitleMaintenance = () => {
-    const [m, u] = useLocalStorage("showMaintenancePopup", 0);
+    const [m, u] = useLocalStorage("showMaintenancePopup", 1);
     return (
       index_browserExports.useFlag("maintenance") &&
       Date.now() - m > 1e3 * 60 * 5 &&
