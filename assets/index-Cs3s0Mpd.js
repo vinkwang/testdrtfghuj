@@ -216941,7 +216941,7 @@ const AccountStatus = () => {
               : m("/signin"),
           v(!1));
       },
-      children: b ? "Signing In..." : "Sign In",
+      children: b ? "Signing In..." : "Log In",
     });
   },
   LoginBonusButton = (m) => {
@@ -216960,7 +216960,7 @@ const AccountStatus = () => {
           },
           color: h ? "white" : "gray",
           ...AcrylicBackgroundChakraProps,
-          children: "Daily Login Bonus",
+          children: "Daily Bonus",
         })
       : null;
   };
@@ -218673,73 +218673,6 @@ const Input = ({
       ],
     });
   }),
-  PartnerLinksModal = (m) => {
-    const u = () => {
-      m.onClose();
-    };
-    return jsxRuntimeExports.jsxs(Modal, {
-      isOpen: m.isOpen,
-      onClose: u,
-      isCentered: !0,
-      size: "xl",
-      children: [
-        jsxRuntimeExports.jsx(ModalOverlay, {}),
-        jsxRuntimeExports.jsxs(ModalContent, {
-          bg: "gray.700",
-          children: [
-            jsxRuntimeExports.jsx(ModalHeader, {
-              fontSize: "2xl",
-              children: "Partner Sites",
-            }),
-            jsxRuntimeExports.jsx(ModalCloseButton, {}),
-            jsxRuntimeExports.jsx(ModalBody, {
-              children: jsxRuntimeExports.jsxs(VStack, {
-                alignItems: "flex-start",
-                pb: "1em",
-                children: [
-                  jsxRuntimeExports.jsx(Link$1, {
-                    href: "https://crazygames.com",
-                    target: "_blank",
-                    rel: "noopener noreferrer",
-                    children: "crazygames.com",
-                  }),
-                  !Game.isCrazyGames &&
-                    jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
-                      children: [
-                        jsxRuntimeExports.jsx(Link$1, {
-                          href: "https://now.gg",
-                          target: "_blank",
-                          rel: "noopener noreferrer",
-                          children: "now.gg",
-                        }),
-                        jsxRuntimeExports.jsx(Link$1, {
-                          href: "https://iogames.space",
-                          target: "_blank",
-                          rel: "noopener noreferrer",
-                          children: "iogames.space",
-                        }),
-                        jsxRuntimeExports.jsx(Link$1, {
-                          href: "https://policies.google.com/technologies/partner-sites",
-                          target: "_blank",
-                          rel: "noopener noreferrer",
-                          children: "Google Policies",
-                        }),
-                        jsxRuntimeExports.jsx(Link$1, {
-                          href: "https://kevin.games/",
-                          target: "_blank",
-                          title: "Free Online Games",
-                          children: "Kevin Games",
-                        }),
-                      ],
-                    }),
-                ],
-              }),
-            }),
-          ],
-        }),
-      ],
-    });
-  },
   discordbutton = "/assets/join-discord-73c5Y2Jf.png",
   DiscordLinkModal = ({ isOpen: m, onClose: u }) =>
     jsxRuntimeExports.jsxs(Modal, {
