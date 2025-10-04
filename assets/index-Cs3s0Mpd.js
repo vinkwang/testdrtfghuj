@@ -219005,7 +219005,7 @@ const fetchSkin = async (m, u = "bob") => {
               Math.min(m.ping ?? NaN, 9999)
                 .toString()
                 .padStart(4),
-              "ms",
+              "ping/ms",
             ],
           }),
         ],
