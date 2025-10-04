@@ -216941,7 +216941,7 @@ const AccountStatus = () => {
               : m("/signin"),
           v(!1));
       },
-      children: b ? "Signing In..." : "Log In",
+      children: b ? "Signing In..." : "Sign In",
     });
   },
   LoginBonusButton = (m) => {
@@ -216960,7 +216960,7 @@ const AccountStatus = () => {
           },
           color: h ? "white" : "gray",
           ...AcrylicBackgroundChakraProps,
-          children: "Daily Bonus",
+          children: "Daily Login Bonus",
         })
       : null;
   };
@@ -218673,6 +218673,73 @@ const Input = ({
       ],
     });
   }),
+  PartnerLinksModal = (m) => {
+    const u = () => {
+      m.onClose();
+    };
+    return jsxRuntimeExports.jsxs(Modal, {
+      isOpen: m.isOpen,
+      onClose: u,
+      isCentered: !0,
+      size: "xl",
+      children: [
+        jsxRuntimeExports.jsx(ModalOverlay, {}),
+        jsxRuntimeExports.jsxs(ModalContent, {
+          bg: "gray.700",
+          children: [
+            jsxRuntimeExports.jsx(ModalHeader, {
+              fontSize: "2xl",
+              children: "Partner Sites",
+            }),
+            jsxRuntimeExports.jsx(ModalCloseButton, {}),
+            jsxRuntimeExports.jsx(ModalBody, {
+              children: jsxRuntimeExports.jsxs(VStack, {
+                alignItems: "flex-start",
+                pb: "1em",
+                children: [
+                  jsxRuntimeExports.jsx(Link$1, {
+                    href: "https://crazygames.com",
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    children: "crazygames.com",
+                  }),
+                  !Game.isCrazyGames &&
+                    jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
+                      children: [
+                        jsxRuntimeExports.jsx(Link$1, {
+                          href: "https://now.gg",
+                          target: "_blank",
+                          rel: "noopener noreferrer",
+                          children: "now.gg",
+                        }),
+                        jsxRuntimeExports.jsx(Link$1, {
+                          href: "https://iogames.space",
+                          target: "_blank",
+                          rel: "noopener noreferrer",
+                          children: "iogames.space",
+                        }),
+                        jsxRuntimeExports.jsx(Link$1, {
+                          href: "https://policies.google.com/technologies/partner-sites",
+                          target: "_blank",
+                          rel: "noopener noreferrer",
+                          children: "Google Policies",
+                        }),
+                        jsxRuntimeExports.jsx(Link$1, {
+                          href: "https://kevin.games/",
+                          target: "_blank",
+                          title: "Free Online Games",
+                          children: "Kevin Games",
+                        }),
+                      ],
+                    }),
+                ],
+              }),
+            }),
+          ],
+        }),
+      ],
+    });
+  },
   discordbutton = "/assets/join-discord-73c5Y2Jf.png",
   DiscordLinkModal = ({ isOpen: m, onClose: u }) =>
     jsxRuntimeExports.jsxs(Modal, {
@@ -218757,7 +218824,7 @@ const Input = ({
           style: { position: "fixed", left: "0.4em", bottom: "0em" },
           fontSize: ["xs", "sm"],
           children: [
-            "Wabablox v",
+            "Wabablox staging beta x Miniblox v",
             VERSION$1,
             " | ",
             jsxRuntimeExports.jsx(Link$1, {
@@ -218773,12 +218840,18 @@ const Input = ({
               rel: "noopener noreferrer",
               children: "Terms",
             }),
+            " ",
+            " | ",
+            jsxRuntimeExports.jsx(Link$1, {
+              onClick: h,
+              children: "Partner Sites",
+            }),
             " | ",
             jsxRuntimeExports.jsx(Link$1, {
               href: "/?path=/privacy",
               target: "_blank",
               rel: "noopener noreferrer",
-              children: "We sell your data",
+              children: "Cookies",
             }),
             " | ",
             jsxRuntimeExports.jsx(Link$1, {
@@ -218792,7 +218865,7 @@ const Input = ({
               href: "/?path=/tutorial",
               target: "_blank",
               rel: "noopener noreferrer",
-              children: "How to Peenar",
+              children: "How to Play",
             }),
           ],
         }),
@@ -219005,7 +219078,7 @@ const fetchSkin = async (m, u = "bob") => {
               Math.min(m.ping ?? NaN, 9999)
                 .toString()
                 .padStart(4),
-              "ping/ms",
+              "ms",
             ],
           }),
         ],
