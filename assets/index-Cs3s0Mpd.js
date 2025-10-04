@@ -218757,7 +218757,7 @@ const Input = ({
           style: { position: "fixed", left: "0.4em", bottom: "0em" },
           fontSize: ["xs", "sm"],
           children: [
-            "Wabablox staging beta x Miniblox v",
+            "Wabablox v",
             VERSION$1,
             " | ",
             jsxRuntimeExports.jsx(Link$1, {
@@ -218773,18 +218773,12 @@ const Input = ({
               rel: "noopener noreferrer",
               children: "Terms",
             }),
-            " ",
-            " | ",
-            jsxRuntimeExports.jsx(Link$1, {
-              onClick: h,
-              children: "Partner Sites",
-            }),
             " | ",
             jsxRuntimeExports.jsx(Link$1, {
               href: "/?path=/privacy",
               target: "_blank",
               rel: "noopener noreferrer",
-              children: "Cookies",
+              children: "We sell your data",
             }),
             " | ",
             jsxRuntimeExports.jsx(Link$1, {
@@ -218798,7 +218792,7 @@ const Input = ({
               href: "/?path=/tutorial",
               target: "_blank",
               rel: "noopener noreferrer",
-              children: "How to Play",
+              children: "How to Peenar",
             }),
           ],
         }),
