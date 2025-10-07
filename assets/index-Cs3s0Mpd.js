@@ -50365,7 +50365,7 @@ const INTRP_ALPHA = 0.1,
   MSPT = 50,
   MB = 1024 * 1024,
   VERSION$1 = "3.41.33",
-  MODE = "development";
+  MODE = "staging";
 if (["development", "local", "staging", "production"].indexOf(MODE) === -1)
   throw new Error(`Unknown mode: ${MODE}`);
 const BASE_DOMAIN = "coolmathblox.ca",
