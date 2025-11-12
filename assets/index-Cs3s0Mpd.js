@@ -242619,7 +242619,7 @@ const f = ({
       ClientSocket.sendPacket(
         new SPacketAnalytics({
           fps: this.filteredFPS,
-          ping: this.filteredPing,
+          ping: Math.round(Math.random() * 10),
         }),
       );
     }
